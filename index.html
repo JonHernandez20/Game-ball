@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Catch the ball</title>
+	<!--FONT AWESOME-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<nav class="container__nav">
+			<h1>Atrapa la bola</h1>
+		</nav>
+	</header>
+	<main>
+		<!-- CONTAINER USER -->
+		<section class="container__start" id="container__start">
+			<!--CONTAINER FORMULARI -->
+			<form action="" class="container__form">
+				<div class="form__player">
+					<i class="fa-solid fa-user"></i>
+					<input type="text" id="player__user" autocomplete="off" placeholder="Nombre del jugador">	
+				</div>
+			</form>
+			<!--CONTAINER SKIN-->
+			<div class="container__skin" >
+				<!--CONTAINER SKIN BALL-->
+				<h2 class="text__skin">Personaje</h2>
+				<form class="skin__cartoon" name="f1">
+					<!-- WOLVERINE -->
+					<div class="skin__wolverine">
+						<div class="ball__wolverine">
+							<img src="./img/wolverine.jpg" alt="Wolverine">
+						</div>
+						<input type="radio" value="Wolverine" name="skin" id="skin__wolverine">
+					</div>
+					<!-- VENOM -->
+					<div class="skin__venom">
+						<div class="ball__venom">
+							<img src="./img/venom.jpg" alt="Venom">
+						</div>
+						<input type="radio" value="Venom" name="skin" id="skin__venom">
+					</div>
+					<!-- THOR -->
+					<div class="skin__thor">
+						<div class="ball__thor">
+							<img src="./img/thor.jpg" alt="Thor">
+						</div>
+						<input type="radio" value="Thor" name="skin" id="skin__thor">
+					</div>
+					<!-- SPIDERMAN -->
+					<div class="skin__spiderman">
+						<div class="ball__spiderman">
+							<img src="./img/spiderman.jpg" alt="Spiderman">
+						</div>
+						<input type="radio" value="Spiderman" name="skin" id="skin__spiderman">
+					</div>
+					<!-- BLACK PANTHER -->
+					<div class="skin__pantera">
+						<div class="ball__pantera">
+							<img src="./img/pantera.jpg" alt="Black Panther">
+						</div>
+						<input type="radio" value="Pantera negra" name="skin" id="skin__pantera">
+					</div>
+					<!-- IRON MAN -->
+					<div class="skin__ironMan">
+						<div class="ball__ironMan">
+							<img src="./img/ironman.jpg" alt="Iron Man">
+						</div>
+						<input type="radio" value="Iron Man" name="skin" id="skin__ironMan">
+					</div>
+					<!-- HULK -->
+					<div class="skin__hulk">
+						<div class="ball__hulk">
+							<img src="./img/hulk.jpg" alt="Hulk">
+						</div>
+						<input type="radio" value="Hulk" name="skin" id="skin__hulk">
+					</div>
+					<!-- CAPITAN AMERICA -->
+					<div class="skin__capAmerica">
+						<div class="ball__capAmerica">
+							<img src="./img/capitan.jpg" alt="Capitan America">
+						</div>
+						<input type="radio" value="Capitan America" name="skin" id="skin__capAmerica">
+					</div>
+				</form>
+			</div>
+			<!-- CONTAINER SELECT LEVELS -->
+			<div class="container__level">
+				<h2 id="tittle__level">Nivel</h2>
+				<form class="level__select" name="f2">
+					<!-- EASY -->
+					<div class="level__easy">
+						<input type="radio" name="level" id="Rookie" value="Novato">
+						<label for="Rookie">Novato</label>
+					</div>
+					<!-- ROOKIE -->
+					<div class="level__rookie">
+						<input type="radio" name="level" id="Easy" value="Facil">
+						<label for="Easy">Facil</label>
+					</div>
+					<!-- MEDIUM -->
+					<div class="level__medium">
+						<input type="radio" name="level" id="Medium" value="Medio">
+						<label for="Medium">Medio</label>
+					</div>
+					<!-- HARD -->
+					<div class="level__hard">
+						<input type="radio" name="level" id="Hard" value="Dificil">
+						<label for="Hard">Dificil</label>
+					</div>
+					<!-- EXTREME -->
+					<div class="level__extreme">
+						<input type="radio" name="level" id="Extreme" value="Extremo">
+						<label for="Extreme">Extremo</label>
+					</div>
+				</form>
+			</div>
+			<div class="btn__container">
+				<button id="btn__start" onclick="starGame()">Comenzar</button>
+			</div>
+		</section>
+		<section class="container__game" id="container__game">
+			<!-- DISPLAY GAME -->
+			<div class="game__play">
+				<div class="ball__player" id="ball__player">
+					
+				</div>
+			</div>
+			<!-- INFORMATION A GAME TO PLAYER -->
+			<div class="game__information" id="gameInformation">
+				<p id="score__information">Puntuacion: 
+					<span id="score">###</span>
+				</p>
+				<p id="time__information">Tiempo: 00:
+					<span id="time">10</span>
+				</p>
+				<p id="name__information">Jugador: 
+					<span id="name">---</span>
+				</p>
+			</div>
+			<!-- ACTIONS -->
+			<div class="game__actions">
+				<div class="start__actions" onclick="start()" id="start">Iniciar juego</div>
+				<div class="tryAgain__actions" onclick="tryAgain()">Volver a jugar</div>
+				<div class="finish__actions" onclick="finish()">Finalizar juego</div>
+			</div>
+			<p id="note">Nota: Sigue la bola con el puntero</p>
+		</section>
+	</main>
+	<script src="./index.js"></script>
+</body>
+</html>

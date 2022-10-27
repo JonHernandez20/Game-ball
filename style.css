@@ -1,0 +1,324 @@
+/* GLOBALS */
+
+:root
+{
+	--color:  #F67041;
+	--hover: #9A5000;
+	--game: #F7CAA6;
+}
+*
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Cairo', sans-serif;
+
+}
+
+html
+{
+	font-size: 62.5%;
+}
+
+main
+{
+	width: 90%;
+	margin: auto;
+}
+
+header
+{
+	height: 50px;
+	background: #F67041;
+	padding: 2px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+h1
+{
+	font-size: 3rem;
+	text-align: center;
+}
+
+h2
+{
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+img
+{
+	height: 100%;
+	width: 100%;
+}
+
+p
+{
+	font-size: 2.5rem;
+}
+
+/* ---CONTAINER USER--- */
+
+/* FORM CONTAINER */
+.container__form
+{
+	margin: auto;
+	margin: 15px 0;
+	height: 50px;
+}
+
+.form__player
+{
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.form__player i
+{
+	font-size: 2rem;
+	margin-right: 10px;
+}
+
+.form__player input
+{
+	padding: 5px;
+	border: none;
+	width: 350px;
+	font-size: 1.8rem;
+	background: none;
+	border-left: 2px solid var(--color);
+	transition: border .1s;
+}
+
+.form__player input:focus
+{
+	outline: none;
+	border: none;
+	border-bottom: 3px solid var(--color);
+}
+
+/* ---CONTAINER SKIN--- */
+.container__skin
+{
+	position: relative;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.skin__cartoon
+{
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	margin: 15px 0;
+}
+
+.text__skin
+{
+	margin: 15px 0;
+}
+
+.skin__cartoon div
+{
+	width: 250px;
+	height: 250px;
+	display: flex;
+	flex-wrap: 	wrap;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.ball__wolverine, .ball__venom, .ball__thor, .ball__spiderman,
+.ball__pantera, .ball__ironMan, .ball__hulk, .ball__capAmerica
+{
+	height: 50%;
+	width: 100%;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 5px solid black;
+	margin-bottom: 5px;
+}
+
+.skin__wolverine, .skin__venom, .skin__thor, .skin__spiderman
+{
+	margin-bottom: 30px;
+}
+/* ---SELECT LEVELS--- */
+.level__select
+{
+	font-size: 1.7rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+}
+
+.level__select div label 
+{
+	cursor: pointer;
+}
+
+.container__level
+{
+	margin: 15px 0;
+}
+
+/* ---BTN START--- */
+.btn__container
+{
+	width: 30%;
+	height: 50px;
+	margin: 50px auto;
+}
+#btn__start
+{
+	width: 100%;
+	height: 100%;
+	border: none;
+	color: black;
+	background: var(--color);
+	font-size: 1.7rem;
+	border-radius: 500px;
+	transition: background, color, .5s;
+}
+
+#btn__start:hover
+{
+	background: var(--hover);
+	cursor: pointer;
+	color: #ffffff;
+}
+
+/* ---DISPLAY GAME--- */
+.container__game
+{
+	position: relative;
+	height: 600px;
+	width: 100%;
+	padding: 20px;
+	margin: 15px 0;
+	background: var(--color);
+	border: 1px solid black;
+	flex-wrap: wrap;
+	display: none;
+}
+
+.ball__player
+{
+	position: absolute;
+	background: red;
+	height: 100px;
+	width: 100px;	
+	overflow: hidden;
+	border: 2px solid black;
+	border-radius: 50px;
+	transition: all .1s;
+}
+
+.game__play
+{
+	position: relative;
+	width: 100%;
+	height: 70%;	
+	background: #ffffff;
+	border: 3px dashed #000000;
+}
+
+.game__information
+{
+	width: 100%;
+	margin: 20px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.game__actions
+{
+	width: 100%;
+	display: flex;
+	font-size: 2rem;
+	justify-content: space-around;
+	align-items: center;
+	text-align: center;
+}
+
+.game__actions div
+{
+	width: 150px;
+	height: 40px;
+	border-radius: 50px;
+	cursor: pointer;
+	color: white;
+	transition: all .3s;
+}
+
+.start__actions
+{
+	background: #6B70D1;
+}
+
+.start__actions:hover
+{
+	background: #5129D2;
+}
+
+.tryAgain__actions
+{
+	background: #66BF6B;
+}
+
+.tryAgain__actions:hover
+{
+	background: #4AAD14;
+}
+
+.finish__actions
+{
+	background: #CB4444;
+}
+
+.finish__actions:hover
+{
+	background: #9E0A0A;
+}
+
+
+#note {
+	font-size: 1.5rem;
+}
+/* ---WARNING MESSAGE--- */
+.warning__game
+{
+	position: absolute;
+	height: 200px;
+	width: 400px;
+	border-radius: 50px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	display: none;
+	justify-content: center;
+	align-items: center;
+}
+
+.warning__game #message
+{
+	font-size: 3rem;
+}
+
+#score, #time, #record, #name
+{
+	font-weight: bold;
+}
